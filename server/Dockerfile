@@ -10,11 +10,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # 复制依赖文件并安装
-COPY requirements.txt .
+COPY server/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # 复制服务端代码
-COPY . .
+COPY server/ .
+
+# 复制 Web 前端代码
+COPY web/ /app/../web/
 
 # 赋予启动脚本执行权限
 RUN chmod +x entrypoint.sh
