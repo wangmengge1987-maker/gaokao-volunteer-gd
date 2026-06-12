@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: gaokao-volunteer-gd
+    runtime: image
+    repo: https://github.com/wangmengge1987-maker/gaokao-volunteer-gd
+    dockerfilePath: ./server/Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: "80"
+      - key: DATABASE_PATH
+        value: gaokao.db
+      - key: DATA_YEAR
+        value: "2025"
