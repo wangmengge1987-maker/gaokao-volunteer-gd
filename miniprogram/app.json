@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/intake/intake",
+    "pages/result/result",
+    "pages/chat/chat"
+  ],
+  "window": {
+    "navigationBarTitleText": "广东志愿助手",
+    "navigationBarBackgroundColor": "#1a56db",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f3f4f6"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

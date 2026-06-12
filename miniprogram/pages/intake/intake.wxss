@@ -1,0 +1,15 @@
+.label {
+  font-weight: 600;
+  margin-bottom: 16rpx;
+}
+
+.check-item {
+  display: block;
+  margin: 12rpx 0;
+}
+
+input {
+  border: 1rpx solid #e5e7eb;
+  border-radius: 8rpx;
+  padding: 16rpx;
+}

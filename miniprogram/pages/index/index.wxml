@@ -1,0 +1,15 @@
+<view class="card">
+  <view style="font-size: 40rpx; font-weight: 600; margin-bottom: 16rpx;">广东高考志愿助手</view>
+  <view style="color: #6b7280; line-height: 1.7;">面向广东省本科普通批，基于位次与历年录取数据，生成冲/稳/保志愿建议。</view>
+</view>
+
+<view class="card">
+  <view style="font-weight: 600; margin-bottom: 12rpx;">使用步骤</view>
+  <view>1. 填写高考分数与选科（3+1+2）</view>
+  <view>2. 设置城市、专业等偏好</view>
+  <view>3. 获取志愿草案并可追问调整</view>
+</view>
+
+<button class="btn-primary" bindtap="goIntake">开始填报建议</button>
+
+<view class="disclaimer">本工具仅供参考，不构成录取承诺。请以广东省教育考试院及院校招生章程为准。</view>

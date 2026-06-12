@@ -1,0 +1,33 @@
+<view class="card">
+  <view class="label">首选科目</view>
+  <radio-group bindchange="onTrackChange">
+    <label><radio value="物理" checked="{{subjectTrack==='物理'}}"/> 物理</label>
+    <label style="margin-left: 24rpx;"><radio value="历史" checked="{{subjectTrack==='历史'}}"/> 历史</label>
+  </radio-group>
+</view>
+
+<view class="card">
+  <view class="label">再选科目（选 2 门）</view>
+  <checkbox-group bindchange="onRechange">
+    <label wx:for="{{rechoiceOptions}}" wx:key="*this" class="check-item">
+      <checkbox value="{{item}}" checked="{{rechoices.indexOf(item) > -1}}"/> {{item}}
+    </label>
+  </checkbox-group>
+</view>
+
+<view class="card">
+  <view class="label">高考总分</view>
+  <input type="number" placeholder="请输入总分" value="{{score}}" bindinput="onScoreInput"/>
+</view>
+
+<view class="card">
+  <view class="label">偏好城市（可选，逗号分隔）</view>
+  <input placeholder="如：广州,深圳" value="{{cities}}" bindinput="onCitiesInput"/>
+</view>
+
+<view class="card">
+  <view class="label">偏好专业关键词（可选）</view>
+  <input placeholder="如：计算机,师范" value="{{majors}}" bindinput="onMajorsInput"/>
+</view>
+
+<button class="btn-primary" loading="{{loading}}" bindtap="submit">生成志愿建议</button>

@@ -1,0 +1,10 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+.env
+*.db
+node_modules/
+miniprogram/project.private.config.json
+.DS_Store
+Thumbs.db

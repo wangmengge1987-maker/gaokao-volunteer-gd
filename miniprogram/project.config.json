@@ -1,0 +1,14 @@
+{
+  "description": "广东高考志愿助手",
+  "packOptions": { "ignore": [] },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "postcss": true,
+    "minified": true
+  },
+  "compileType": "miniprogram",
+  "appid": "touristappid",
+  "projectname": "gaokao-volunteer-gd",
+  "condition": {}
+}
