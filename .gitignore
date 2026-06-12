@@ -4,7 +4,15 @@ __pycache__/
 *.pyc
 .env
 *.db
+*.db.*
 node_modules/
 miniprogram/project.private.config.json
 .DS_Store
 Thumbs.db
+ngrok.exe
+ngrok.zip
+ngrok-v3.zip
+ngrok_out.txt
+start-ngrok.ps1
+start-web.ps1
+server/C:*
