@@ -40,6 +40,7 @@ class VolunteerItem(BaseModel):
     student_rank: int
     confidence: float = 0.5
     evidence: dict
+    major_names: str | None = None  # 该专业组包含的所有专业名称
 
 
 class RecommendResponse(BaseModel):

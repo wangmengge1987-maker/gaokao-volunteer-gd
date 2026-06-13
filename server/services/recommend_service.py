@@ -120,9 +120,14 @@ def _preference_score(row: dict, prefs: dict) -> float:
     if levels and row.get("school_level") in levels:
         score += 2
     if majors:
-        name = (row.get("group_name") or "") + (row.get("major_name") or "")
-        if any(m in name for m in majors):
-            score += 4
+        # 同时匹配专业组名称和专业名称
+        group_name = row.get("group_name") or ""
+        major_names = row.get("major_names") or ""
+        all_names = group_name + "|" + major_names
+        matched = [m for m in majors if m in all_names]
+        if matched:
+            # 匹配的专业越多，分数越高
+            score += 4 * len(matched)
     return score
 
 
@@ -156,7 +161,8 @@ def recommend(
                    MIN(p.group_name) as group_name,
                    MIN(p.subject_requirement) as subject_requirement,
                    SUM(p.plan_count) as plan_count,
-                   p.school_level, p.city
+                   p.school_level, p.city,
+                   GROUP_CONCAT(p.major_name, '|') as major_names
             FROM enrollment_plan p
             WHERE p.year = ? AND p.batch = ?
               AND p.plan_count > 0
@@ -213,8 +219,13 @@ def recommend(
             # ── 改进3: 根据学校层次动态调整冲/稳/保阈值 ──
             tier = _tier_for_rank(student_rank, adjusted_ref_rank,
                                   school_level=plan["school_level"])
-            if not tier or tier in ("难", "垫"):
+            has_major_pref = bool(preferences.get("majors"))
+            if not has_major_pref and (not tier or tier in ("难", "垫")):
+                # 无专业偏好时，太难或太保底的跳过
                 continue
+            tier = tier or (  # 补全 tier 标签
+                "难" if adjusted_ref_rank and adjusted_ref_rank < student_rank else "垫"
+            )
 
             # Clean group name: shorten verbose Excel descriptions
             group_name = plan["group_name"] or ""
@@ -233,6 +244,7 @@ def recommend(
                 "school_level": plan["school_level"],
                 "plan_count": plan["plan_count"],
                 "subject_requirement": plan["subject_requirement"],
+                "major_names": plan["major_names"],
                 "tier": tier,
                 "ref_min_rank": ref_rank,
                 "adjusted_rank": adjusted_ref_rank,
@@ -242,7 +254,7 @@ def recommend(
                 "history": [dict(r) for r in hist_rows],
                 "preference_score": _preference_score(
                     {"city": plan["city"], "school_level": plan["school_level"],
-                     "group_name": short_name, "major_name": short_name},
+                     "group_name": short_name, "major_names": plan["major_names"]},
                     preferences,
                 ),
                 "evidence": {
@@ -263,20 +275,41 @@ def recommend(
             if filtered:  # 有结果才过滤，避免空结果
                 candidates = filtered
 
-        by_tier: dict[str, list] = {"冲": [], "稳": [], "保": []}
-        for c in candidates:
-            by_tier[c["tier"]].append(c)
+        if has_major_pref:
+            # ── 专业偏好模式：优先展示匹配专业，按位次差距排序 ──
+            for c in candidates:
+                # 给每个候选计算"位次差距比率"，用于排序
+                ref = c.get("ref_min_rank") or 0
+                c["_rank_gap_ratio"] = (c["student_rank"] - ref) / max(ref, 1) if ref > 0 else 999
 
-        for tier in by_tier:
-            by_tier[tier].sort(key=lambda x: (-x["preference_score"], x["ref_min_rank"] or 999999))
+            # 排序：匹配专业且冲/稳的最优先 → 匹配专业的其他 → 不匹配的按原逻辑
+            tier_priority = {"冲": 0, "稳": 1, "难": 2, "保": 3, "垫": 4}
+            candidates.sort(key=lambda x: (
+                0 if x["preference_score"] > 0 and x.get("tier") in ("冲", "稳") else
+                1 if x["preference_score"] > 0 else 2,
+                tier_priority.get(x.get("tier", ""), 5),
+                abs(x.get("_rank_gap_ratio", 999)),
+            ))
 
-        result: list[dict] = []
-        order = 1
-        for tier in ("冲", "稳", "保"):
-            for item in by_tier[tier][: tier_counts.get(tier, 0)]:
-                item["order"] = order
-                order += 1
-                result.append(item)
+            result = candidates[: settings.max_volunteers]
+            for i, item in enumerate(result):
+                item["order"] = i + 1
+        else:
+            # ── 无专业偏好：按原逻辑分冲/稳/保 ──
+            by_tier: dict[str, list] = {"冲": [], "稳": [], "保": []}
+            for c in candidates:
+                by_tier[c["tier"]].append(c)
+
+            for tier in by_tier:
+                by_tier[tier].sort(key=lambda x: (-x["preference_score"], x["ref_min_rank"] or 999999))
+
+            result: list[dict] = []
+            order = 1
+            for tier in ("冲", "稳", "保"):
+                for item in by_tier[tier][: tier_counts.get(tier, 0)]:
+                    item["order"] = order
+                    order += 1
+                    result.append(item)
 
         return result[: settings.max_volunteers]
     finally:
