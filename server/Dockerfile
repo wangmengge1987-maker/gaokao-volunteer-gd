@@ -19,6 +19,9 @@ COPY server/ .
 # 复制 Web 前端代码
 COPY web/ /app/../web/
 
+# 复制数据文件（数据库初始化用）
+COPY data/ /data/
+
 # 赋予启动脚本执行权限
 RUN chmod +x entrypoint.sh
 

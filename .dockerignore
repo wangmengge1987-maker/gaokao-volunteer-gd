@@ -13,6 +13,5 @@ ngrok_out.txt
 node_modules/
 miniprogram/
 agent/
-data/
 docs/
 start-*.ps1
