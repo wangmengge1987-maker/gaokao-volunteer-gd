@@ -111,6 +111,15 @@ main {
 
 /* ── Form Styles ── */
 .field { margin-bottom: 1rem; }
+.field-hint {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.field-hint.warn {
+  color: var(--chong);
+}
 .field:last-child { margin-bottom: 0; }
 
 label {

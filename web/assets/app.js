@@ -244,3 +244,26 @@ document.querySelectorAll('input[name="rechoice"]').forEach((el) => {
     if (checked.length > 2) el.checked = false;
   });
 });
+
+// 城市过滤模式切换时更新提示
+function updateCityHint() {
+  const hint = document.getElementById("city-hint");
+  const filterMode = document.querySelector('input[name="city_filter"]:checked')?.value;
+  const cities = document.getElementById("cities").value.trim();
+  const cityList = cities ? cities.split(/[,，]/).map(s => s.trim()).filter(Boolean) : [];
+
+  if (filterMode === "strict") {
+    hint.textContent = cityList.length > 5
+      ? `⚠️ 当前 ${cityList.length} 个城市，「仅限这些城市」不能超过 5 个`
+      : `💡 已选 ${cityList.length} 个城市，最多 5 个`;
+    hint.className = "field-hint" + (cityList.length > 5 ? " warn" : "");
+  } else {
+    hint.textContent = `💡 选择「仅限这些城市」时最多填 5 个`;
+    hint.className = "field-hint";
+  }
+}
+
+document.querySelectorAll('input[name="city_filter"]').forEach(el => {
+  el.addEventListener("change", updateCityHint);
+});
+document.getElementById("cities").addEventListener("input", updateCityHint);
