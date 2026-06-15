@@ -68,7 +68,7 @@ function getFormData() {
   const cityFilter = cityFilterEl ? cityFilterEl.value : "prefer";
 
   if (cities) {
-    const cityList = cities.split(/[,，]/).map((s) => s.trim()).filter(Boolean);
+    const cityList = cities.split(/[,，\s]+/).map((s) => s.trim()).filter(Boolean);
     if (cityFilter === "strict" && cityList.length > 5) {
       throw new Error("「仅限这些城市」模式下，城市不能超过 5 个");
     }
@@ -250,7 +250,7 @@ function updateCityHint() {
   const hint = document.getElementById("city-hint");
   const filterMode = document.querySelector('input[name="city_filter"]:checked')?.value;
   const cities = document.getElementById("cities").value.trim();
-  const cityList = cities ? cities.split(/[,，]/).map(s => s.trim()).filter(Boolean) : [];
+  const cityList = cities ? cities.split(/[,，\s]+/).map(s => s.trim()).filter(Boolean) : [];
 
   if (filterMode === "strict") {
     hint.textContent = cityList.length > 5
