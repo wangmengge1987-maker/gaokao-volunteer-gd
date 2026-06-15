@@ -63,11 +63,18 @@ function getFormData() {
   if (!score || score < 0 || score > 750) throw new Error("请输入有效的高考总分");
 
   const preferences = {};
-  if (cities) preferences.cities = cities.split(/[,，]/).map((s) => s.trim()).filter(Boolean);
-  if (majors) preferences.majors = majors.split(/[,，]/).map((s) => s.trim()).filter(Boolean);
 
   const cityFilterEl = document.querySelector('input[name="city_filter"]:checked');
   const cityFilter = cityFilterEl ? cityFilterEl.value : "prefer";
+
+  if (cities) {
+    const cityList = cities.split(/[,，]/).map((s) => s.trim()).filter(Boolean);
+    if (cityFilter === "strict" && cityList.length > 5) {
+      throw new Error("「仅限这些城市」模式下，城市不能超过 5 个");
+    }
+    preferences.cities = cityList;
+  }
+  if (majors) preferences.majors = majors.split(/[,，]/).map((s) => s.trim()).filter(Boolean);
 
   return { subject_track: track, rechoices, score, preferences, city_filter: cityFilter };
 }
