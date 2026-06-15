@@ -109,6 +109,9 @@ def compute_cumulative_shifts(
     """
     按历史录取位次排序，计算每个（学校, 专业组）的累积计划变动偏移量。
 
+    安全保护：如果当前年份的数据量远少于往年（例如专业组编码完全不同），
+    则返回空结果，避免年际数据不匹配导致错误偏移。
+
     Returns:
         {(school_code, group_code): cumulative_shift, ...}
     """
@@ -122,6 +125,29 @@ def compute_cumulative_shifts(
             pc for pc in plan_changes
             if pc["subject_track"] == subject_track
         ]
+
+        # ── 安全检查：两年数据结构是否可比 ──
+        # 如果当前年份有数据的组数量远少于往年，说明数据可能不完全
+        # 或专业组编码体系已变更，此时不应应用计划偏移
+        prev_groups = set()
+        curr_groups = set()
+        for pc in active_changes:
+            if pc["plan_previous"] > 0:
+                prev_groups.add(pc["group_code"])
+            if pc["plan_current"] > 0:
+                curr_groups.add(pc["group_code"])
+
+        # 计算「匹配率」：同时存在于两年中的组数量
+        matched = prev_groups & curr_groups
+        total_prev = len(prev_groups)
+        total_curr = len(curr_groups)
+
+        # 如果往年的组超过 30% 在当年找不到对应，说明数据结构不可比
+        if total_prev > 0 and len(matched) / total_prev < 0.7:
+            return {}
+        # 如果当年的组超过 30% 在往年找不到对应，说明数据结构不可比
+        if total_curr > 0 and len(matched) / total_curr < 0.7:
+            return {}
 
         # 获取每个专业组的历史参考位次（取最近3年最低位次中的最小值）
         ref_ranks: dict[tuple[str, str], int] = {}
