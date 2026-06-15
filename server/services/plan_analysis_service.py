@@ -132,10 +132,11 @@ def compute_cumulative_shifts(
         prev_groups = set()
         curr_groups = set()
         for pc in active_changes:
+            key = (pc["school_code"], pc["group_code"])
             if pc["plan_previous"] > 0:
-                prev_groups.add(pc["group_code"])
+                prev_groups.add(key)
             if pc["plan_current"] > 0:
-                curr_groups.add(pc["group_code"])
+                curr_groups.add(key)
 
         # 计算「匹配率」：同时存在于两年中的组数量
         matched = prev_groups & curr_groups
