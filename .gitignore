@@ -16,3 +16,4 @@ ngrok_out.txt
 start-ngrok.ps1
 start-web.ps1
 server/C:*
+debug_*.json
