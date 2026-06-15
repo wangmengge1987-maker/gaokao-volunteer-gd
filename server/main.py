@@ -159,6 +159,19 @@ def import_plan_csv(file_path: str):
         conn.close()
 
 
+@app.get("/api/v1/cities")
+def list_cities():
+    """返回所有城市名列表（用于前端智能分割）"""
+    conn = get_connection()
+    try:
+        rows = conn.execute(
+            "SELECT DISTINCT city FROM enrollment_plan WHERE city IS NOT NULL AND city != '' ORDER BY city"
+        ).fetchall()
+        return {"cities": [r["city"] for r in rows]}
+    finally:
+        conn.close()
+
+
 @app.get("/api/v1/plan/summary")
 def plan_summary(subject_track: str = "物理"):
     """Quick summary: whether 2026 plans exist and what's the net change."""

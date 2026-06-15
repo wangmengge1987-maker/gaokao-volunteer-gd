@@ -1,5 +1,90 @@
 const API = "";
 
+// ── City Segmentation ──
+
+let CITY_SET = null; // lazy-loaded from API
+const EXTRA_CITIES = ["北京", "上海", "天津", "重庆"]; // 数据库中可能是区名，补上市级名
+
+async function ensureCitySet() {
+  if (CITY_SET) return;
+  try {
+    const res = await fetch(`${API}/api/v1/cities`);
+    const data = await res.json();
+    const all = [...data.cities, ...EXTRA_CITIES];
+    CITY_SET = new Set(all.map(s => s.trim()));
+  } catch {
+    // fallback：常见城市兜底
+    CITY_SET = new Set([
+      "北京","上海","天津","重庆",
+      "广州","深圳","珠海","东莞","佛山","中山","惠州","汕头","湛江","肇庆","江门","茂名","韶关","梅州","汕尾","阳江","清远","潮州","揭阳","云浮","河源",
+      "武汉","南京","成都","杭州","长沙","西安","昆明","贵阳","南宁","海口","三亚",
+      "石家庄","太原","呼和浩特","沈阳","大连","长春","哈尔滨","苏州","无锡","常州",
+      "宁波","温州","嘉兴","合肥","福州","厦门","泉州","南昌","济南","青岛","烟台",
+      "郑州","洛阳","开封","长沙","株洲","湘潭","衡阳","南宁","桂林","北海",
+      "兰州","西宁","银川","乌鲁木齐","拉萨","秦皇岛","邯郸","扬州","镇江","南通",
+      "绍兴","阜阳","芜湖","蚌埠","漳州","赣州","九江","宜春","上饶","吉安","抚州",
+      "临沂","济宁","泰安","德州","淄博","潍坊","菏泽","枣庄","日照","威海",
+      "荆州","宜昌","襄阳","黄冈","十堰","荆门","孝感","黄石","咸宁","恩施",
+      "绵阳","德阳","宜宾","南充","泸州","自贡","乐山","眉山","达州","内江",
+      "柳州","桂林","梧州","北海","防城港","钦州","贵港","玉林","百色","贺州","河池","来宾","崇左",
+      "遵义","六盘水","铜仁","毕节","安顺","黔西南","黔东南","黔南",
+      "曲靖","玉溪","保山","昭通","普洱","丽江","临沧","大理","楚雄","红河","文山","西双版纳",
+      "咸阳","宝鸡","渭南","延安","汉中","榆林","安康","商洛",
+      "酒泉","天水","庆阳","定西","白银","陇南","平凉","张掖",
+    ]);
+  }
+}
+
+function greedySegmentCities(text) {
+  if (!text || text.length < 2) return [];
+  const result = [];
+  let i = 0;
+  const maxLen = Math.min(6, text.length);
+  while (i < text.length) {
+    let found = false;
+    // 从最长开始匹配（最长城市名不超过6字）
+    for (let len = maxLen; len >= 2; len--) {
+      if (i + len > text.length) continue;
+      const candidate = text.substring(i, i + len);
+      if (CITY_SET && CITY_SET.has(candidate)) {
+        result.push(candidate);
+        i += len;
+        found = true;
+        break;
+      }
+    }
+    if (!found) {
+      i++; // 跳过无法识别的字符
+    }
+  }
+  return result;
+}
+
+function parseCities(input) {
+  if (!input || !input.trim()) return [];
+  const raw = input.trim();
+
+  // 1) 先用标点/空格分割
+  const segments = raw.split(/[,，、/;；\s]+/).map(s => s.trim()).filter(Boolean);
+  if (segments.length === 0) return [];
+
+  // 2) 对每个片段，如果长度 >= 3 则尝试城市名分割
+  const result = [];
+  for (const seg of segments) {
+    if (seg.length >= 3) {
+      const sub = greedySegmentCities(seg);
+      if (sub.length > 0) {
+        result.push(...sub);
+        continue;
+      }
+    }
+    result.push(seg);
+  }
+
+  // 3) 去重（保持顺序）
+  return [...new Set(result)];
+}
+
 // ── Helpers ──
 
 async function api(path, body) {
@@ -68,13 +153,13 @@ function getFormData() {
   const cityFilter = cityFilterEl ? cityFilterEl.value : "prefer";
 
   if (cities) {
-    const cityList = cities.split(/[,，\s]+/).map((s) => s.trim()).filter(Boolean);
+    const cityList = parseCities(cities);
     if (cityFilter === "strict" && cityList.length > 5) {
       throw new Error("「仅限这些城市」模式下，城市不能超过 5 个");
     }
     preferences.cities = cityList;
   }
-  if (majors) preferences.majors = majors.split(/[,，]/).map((s) => s.trim()).filter(Boolean);
+  if (majors) preferences.majors = majors.split(/[,，、/;；\s]+/).map((s) => s.trim()).filter(Boolean);
 
   return { subject_track: track, rechoices, score, preferences, city_filter: cityFilter };
 }
@@ -250,7 +335,7 @@ function updateCityHint() {
   const hint = document.getElementById("city-hint");
   const filterMode = document.querySelector('input[name="city_filter"]:checked')?.value;
   const cities = document.getElementById("cities").value.trim();
-  const cityList = cities ? cities.split(/[,，\s]+/).map(s => s.trim()).filter(Boolean) : [];
+  const cityList = cities ? parseCities(cities) : [];
 
   if (filterMode === "strict") {
     hint.textContent = cityList.length > 5
@@ -267,3 +352,6 @@ document.querySelectorAll('input[name="city_filter"]').forEach(el => {
   el.addEventListener("change", updateCityHint);
 });
 document.getElementById("cities").addEventListener("input", updateCityHint);
+
+// 页面加载后预加载城市名单
+ensureCitySet();
