@@ -3,9 +3,13 @@ def parse_subjects(first_choice: str, rechoices: list[str]) -> set[str]:
     return {first_choice, *rechoices}
 
 
+import re
+
+
 def subject_requirement_met(requirement: str | None, student_subjects: set[str]) -> bool:
     """Check if student meets major group subject requirement."""
     if not requirement or requirement.strip() in ("不限", "无"):
         return True
-    required = {s.strip() for s in requirement.replace("/", ",").split(",") if s.strip()}
+    # 支持逗号、斜杠、顿号、"和" 作为分隔符
+    required = {s.strip() for s in re.split(r"[,，、/和]+", requirement) if s.strip()}
     return required.issubset(student_subjects)
