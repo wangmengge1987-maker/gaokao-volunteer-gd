@@ -39,6 +39,10 @@ app.add_middleware(
 def index():
     return FileResponse(WEB_DIR / "index.html")
 
+@app.get("/app")
+def web_app():
+    return FileResponse(WEB_DIR / "index.html")
+
 
 if WEB_DIR.joinpath("assets").is_dir():
     app.mount("/assets", StaticFiles(directory=WEB_DIR / "assets"), name="assets")
