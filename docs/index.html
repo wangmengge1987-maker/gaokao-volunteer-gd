@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>广东高考志愿助手</title>
+  <link rel="stylesheet" href="assets/style.css?v=3" />
+</head>
+<body>
+  <header>
+    <h1>🎓 广东高考志愿助手</h1>
+    <p class="subtitle">广东省 · 本科普通批 · 冲 / 稳 / 保 智能推荐</p>
+  </header>
+
+  <main>
+    <div class="app-layout">
+
+      <!-- Left: Form -->
+      <div class="left-panel">
+        <section class="card">
+          <div class="card-title">📝 填写信息</div>
+          <form id="form">
+            <div class="field">
+              <label>首选科目</label>
+              <div class="radio-row">
+                <label><input type="radio" name="track" value="物理" checked /> <span>物理</span></label>
+                <label><input type="radio" name="track" value="历史" /> <span>历史</span></label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>再选科目（选 2 门）</label>
+              <div class="check-row">
+                <label><input type="checkbox" name="rechoice" value="化学" /> <span>化学</span></label>
+                <label><input type="checkbox" name="rechoice" value="生物" /> <span>生物</span></label>
+                <label><input type="checkbox" name="rechoice" value="政治" /> <span>政治</span></label>
+                <label><input type="checkbox" name="rechoice" value="地理" /> <span>地理</span></label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>高考总分与全省位次</label>
+              <div class="row-2">
+                <input type="number" id="score" min="0" max="750" placeholder="总分" required />
+                <input type="number" id="rank" placeholder="全省位次" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="cities">偏好城市（可选）</label>
+              <input type="text" id="cities" placeholder="广州, 深圳" />
+              <span id="city-hint" class="field-hint">💡 选择「仅限这些城市」时最多填 5 个</span>
+            </div>
+
+            <div class="field" id="city-filter-field">
+              <label>城市过滤方式</label>
+              <div class="radio-row">
+                <label><input type="radio" name="city_filter" value="prefer" checked /> <span>优先显示</span></label>
+                <label><input type="radio" name="city_filter" value="strict" /> <span>仅限这些城市</span></label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="majors">偏好专业关键词（可选）</label>
+              <input type="text" id="majors" placeholder="计算机, 师范" />
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="submit-btn">🎯 生成志愿建议</button>
+            <p id="form-error" class="form-error"></p>
+          </form>
+        </section>
+      </div>
+
+      <!-- Right: Results Panel -->
+      <div class="right-panel">
+        <!-- Empty state -->
+        <div id="empty-state" class="card empty-state">
+          <div class="icon">📋</div>
+          <p>填写左侧信息，点击「生成志愿建议」<br />系统将为你推荐冲 / 稳 / 保方案</p>
+        </div>
+
+        <!-- Results -->
+        <section class="card" id="results">
+          <div class="card-title">📊 志愿分析报告 <span class="badge" id="result-badge">物理类</span></div>
+
+          <div class="dashboard-stats">
+            <div class="stat-card">
+              <div class="stat-num primary" id="stat-rank">—</div>
+              <div class="stat-lbl">参考位次</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num primary" id="stat-count">—</div>
+              <div class="stat-lbl">推荐数量</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num primary" id="stat-total-plan">—</div>
+              <div class="stat-lbl">总计划人数</div>
+            </div>
+          </div>
+
+          <!-- Tier distribution bar -->
+          <div class="tier-bar-container" id="tier-bar-container">
+            <div class="tier-bar-title">冲 / 稳 / 保 分布</div>
+            <div class="tier-bar" id="tier-bar">
+              <div class="tier-bar-seg chong" id="bar-chong" style="width:0%">冲</div>
+              <div class="tier-bar-seg wen" id="bar-wen" style="width:0%">稳</div>
+              <div class="tier-bar-seg bao" id="bar-bao" style="width:0%">保</div>
+            </div>
+            <div class="tier-bar-legend">
+              <span><span class="dot" style="background:var(--chong)"></span> 冲 <span id="legend-chong">0</span></span>
+              <span><span class="dot" style="background:var(--wen)"></span> 稳 <span id="legend-wen">0</span></span>
+              <span><span class="dot" style="background:var(--bao)"></span> 保 <span id="legend-bao">0</span></span>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem;font-size:0.8rem;color:var(--text-secondary);font-weight:600;">
+            <span>🏆 推荐方案</span>
+            <span style="margin-left:auto;font-weight:400;font-size:0.75rem;color:var(--muted);">点击「解析」查看AI解读</span>
+          </div>
+
+          <div id="vol-list" class="volunteer-list"></div>
+          <p id="result-disclaimer" class="disclaimer"></p>
+        </section>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    仅供参考 · 最终以广东省教育考试院及院校招生章程为准
+  </footer>
+
+  <div id="modal" class="modal-overlay">
+    <div class="modal">
+      <button type="button" class="modal-close" id="modal-close" aria-label="关闭">×</button>
+      <h3 id="modal-title"></h3>
+      <div id="modal-body" class="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="assets/app.js?v=3"></script>
+</body>
+</html>
