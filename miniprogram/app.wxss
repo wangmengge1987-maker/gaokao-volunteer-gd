@@ -7,8 +7,8 @@ page {
 .card {
   background: #fff;
   border-radius: 16rpx;
-  padding: 32rpx;
-  margin: 24rpx;
+  padding: 36rpx;
+  margin: 32rpx;
   box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.06);
 }
 

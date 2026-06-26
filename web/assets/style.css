@@ -133,7 +133,7 @@ label {
 input[type="number"],
 input[type="text"] {
   width: 100%;
-  padding: 0.6rem 0.75rem;
+  padding: 0.75rem 0.85rem;
   border: 1.5px solid var(--border);
   border-radius: var(--radius-sm);
   font-size: 0.95rem;
@@ -145,6 +145,12 @@ input[type="text"]:focus {
   border-color: var(--primary);
   box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.1);
 }
+
+.row-2 {
+  display: flex;
+  gap: 0.75rem;
+}
+.row-2 input { flex: 1; }
 
 .radio-row, .check-row {
   display: flex;

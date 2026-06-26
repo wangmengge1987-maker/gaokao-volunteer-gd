@@ -31,19 +31,20 @@
             <div class="field">
               <label>再选科目（选 2 门）</label>
               <div class="check-row">
-                <label><input type="checkbox" name="rechoice" value="化学" checked /> <span>化学</span></label>
-                <label><input type="checkbox" name="rechoice" value="生物" checked /> <span>生物</span></label>
+                <label><input type="checkbox" name="rechoice" value="化学" /> <span>化学</span></label>
+                <label><input type="checkbox" name="rechoice" value="生物" /> <span>生物</span></label>
                 <label><input type="checkbox" name="rechoice" value="政治" /> <span>政治</span></label>
                 <label><input type="checkbox" name="rechoice" value="地理" /> <span>地理</span></label>
               </div>
             </div>
 
             <div class="field">
-              <label for="score">高考总分</label>
-              <input type="number" id="score" min="0" max="750" placeholder="例如 580" required />
+              <label>高考总分与全省位次</label>
+              <div class="row-2">
+                <input type="number" id="score" min="0" max="750" placeholder="总分" required />
+                <input type="number" id="rank" placeholder="全省位次" />
+              </div>
             </div>
-
-            <div id="rank-banner" class="rank-banner"></div>
 
             <div class="field">
               <label for="cities">偏好城市（可选）</label>

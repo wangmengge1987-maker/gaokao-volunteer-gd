@@ -1,10 +1,13 @@
 __pycache__
 *.pyc
 .env
-*.db
 *.db.backup
 *.db.*_backup
 .git
 .gitignore
 README.md
-C:UserswangmProjectsgaokao-volunteer-gdrun_ngrok.bat
+cache/
+logs/
+__pycache__/
+.venv/
+scripts/

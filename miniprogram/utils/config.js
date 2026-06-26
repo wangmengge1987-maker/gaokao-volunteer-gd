@@ -5,7 +5,7 @@
  */
 
 // ===== 在这里切换环境 =====
-const ENV = 'dev';  // 'dev' 或 'prod'
+const ENV = 'prod';  // 'dev' 或 'prod'
 // =========================
 
 const ENV_CONFIG = {
@@ -14,8 +14,8 @@ const ENV_CONFIG = {
     apiBase: 'https://evaluator-unearned-gutter.ngrok-free.dev',
   },
   prod: {
-    // ⚠️ 部署后替换成微信云托管分配的域名
-    apiBase: 'https://你的云托管域名.tencentcloudapi.com',
+    // 微信云托管
+    apiBase: 'https://gaokao-api-274470-6-1443956945.sh.run.tcloudbase.com',
   },
 };
 

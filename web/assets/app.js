@@ -140,12 +140,20 @@ function getFormData() {
   const track = document.querySelector('input[name="track"]:checked')?.value;
   const rechoices = [...document.querySelectorAll('input[name="rechoice"]:checked')].map((el) => el.value);
   const score = parseInt(document.getElementById("score").value, 10);
+  const rank = parseInt(document.getElementById("rank").value, 10);
   const cities = document.getElementById("cities").value.trim();
   const majors = document.getElementById("majors").value.trim();
 
   if (!track) throw new Error("请选择首选科目");
   if (rechoices.length !== 2) throw new Error("再选科目须恰好选 2 门");
   if (!score || score < 0 || score > 750) throw new Error("请输入有效的高考总分");
+
+  // 2026年广东省本科录取最低分数线校验
+  const BACHELOR_LINES = { '物理': 425, '历史': 440 };
+  const line = BACHELOR_LINES[track];
+  if (score < line) {
+    throw new Error(`该分数（${score}分）低于广东省本科普通类（${track}）录取最低分数线（${line}分），系统仅支持本科普通批志愿建议。`);
+  }
 
   const preferences = {};
 
@@ -161,24 +169,9 @@ function getFormData() {
   }
   if (majors) preferences.majors = majors.split(/[,，、/;；\s]+/).map((s) => s.trim()).filter(Boolean);
 
-  return { subject_track: track, rechoices, score, preferences, city_filter: cityFilter };
-}
-
-async function lookupRank() {
-  const banner = document.getElementById("rank-banner");
-  const score = parseInt(document.getElementById("score").value, 10);
-  const track = document.querySelector('input[name="track"]:checked')?.value;
-  if (!score || !track) {
-    banner.classList.remove("show");
-    return;
-  }
-  try {
-    const data = await api("/api/v1/rank/lookup", { subject_track: track, score });
-    banner.textContent = `参考位次：${data.rank.toLocaleString()}（${data.year} 年 ${data.subject_track}类）`;
-    banner.classList.add("show");
-  } catch {
-    banner.classList.remove("show");
-  }
+  const payload = { subject_track: track, rechoices, score, preferences, city_filter: cityFilter };
+  if (rank && !isNaN(rank)) payload.rank = rank;
+  return payload;
 }
 
 // ── Results Rendering ──
@@ -310,11 +303,6 @@ document.getElementById("form").addEventListener("submit", async (e) => {
     btn.disabled = false;
     btn.textContent = "🎯 生成志愿建议";
   }
-});
-
-document.getElementById("score").addEventListener("blur", lookupRank);
-document.querySelectorAll('input[name="track"]').forEach((el) => {
-  el.addEventListener("change", lookupRank);
 });
 
 document.getElementById("modal-close").addEventListener("click", closeModal);

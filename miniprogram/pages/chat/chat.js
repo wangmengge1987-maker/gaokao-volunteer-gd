@@ -8,6 +8,13 @@ Page({
     loading: false,
   },
 
+  onShareAppMessage() {
+    return {
+      title: '广东高考志愿助手 - AI 解读志愿详情',
+      path: '/pages/index/index',
+    };
+  },
+
   onLoad(options) {
     const result = getApp().globalData.lastResult;
     const index = Number(options.index || 0);

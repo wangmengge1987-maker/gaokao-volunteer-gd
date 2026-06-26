@@ -8,21 +8,40 @@
 
 <view class="card">
   <view class="label">再选科目（选 2 门）</view>
-  <checkbox-group bindchange="onRechange">
-    <label wx:for="{{rechoiceOptions}}" wx:key="*this" class="check-item">
-      <checkbox value="{{item}}" checked="{{rechoices.indexOf(item) > -1}}"/> {{item}}
-    </label>
-  </checkbox-group>
+  <view class="check-group">
+    <view wx:for="{{rechoiceOptions}}" wx:for-index="i" wx:key="i" class="check-item {{selectedMap[item] ? 'sel' : ''}}" bindtap="toggleRechoice" data-value="{{item}}" hover-class="hover">
+      <view class="check-dot {{selectedMap[item] ? 'check-dot-on' : ''}}"></view>
+      {{item}}
+    </view>
+  </view>
 </view>
 
 <view class="card">
-  <view class="label">高考总分</view>
-  <input type="number" placeholder="请输入总分" value="{{score}}" bindinput="onScoreInput"/>
+  <view class="label">高考总分与全省位次</view>
+  <view class="row">
+    <view class="col">
+      <input type="number" placeholder="总分" value="{{score}}" bindinput="onScoreInput"/>
+    </view>
+    <view class="col">
+      <input type="number" placeholder="全省位次" value="{{rank}}" bindinput="onRankInput"/>
+    </view>
+  </view>
 </view>
 
 <view class="card">
   <view class="label">偏好城市（可选，逗号分隔）</view>
   <input placeholder="如：广州,深圳" value="{{cities}}" bindinput="onCitiesInput"/>
+</view>
+
+<view class="card" wx:if="{{cities.trim()}}">
+  <view class="label">城市过滤方式</view>
+  <radio-group bindchange="onCityFilterChange">
+    <label><radio value="prefer" checked="{{cityFilter==='prefer'}}"/> 优先显示</label>
+    <label style="margin-left: 24rpx;"><radio value="strict" checked="{{cityFilter==='strict'}}"/> 仅限这些城市</label>
+  </radio-group>
+  <view wx:if="{{cityFilter==='strict' && cityCount > 5}}" style="color:#dc2626;font-size:24rpx;margin-top:8rpx;">
+    ⚠️ 「仅限这些城市」模式不能超过 5 个城市（当前 {{cityCount}} 个）
+  </view>
 </view>
 
 <view class="card">

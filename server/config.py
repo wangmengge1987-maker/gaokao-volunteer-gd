@@ -5,7 +5,7 @@ from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
     app_name: str = "gaokao-volunteer-gd"
     database_path: str = "gaokao.db"
-    data_year: int = 2025
+    data_year: int = 2026
     province: str = "广东"
     batch: str = "本科普通批"
     max_volunteers: int = 45
