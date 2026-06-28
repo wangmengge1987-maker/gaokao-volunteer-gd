@@ -1,0 +1,14 @@
+<view class="card" wx:if="{{volunteer}}">
+  <view class="school">{{volunteer.school_name}} · {{volunteer.group_name}}</view>
+  <view class="meta">档位：{{volunteer.tier}} · 参考位次 {{volunteer.ref_min_rank}}</view>
+</view>
+
+<view class="card">
+  <view class="label">AI 解释</view>
+  <view class="answer">{{explanation || '点击下方获取解释'}}</view>
+</view>
+
+<view class="card">
+  <input placeholder="例如：这所学校适合调剂吗？" value="{{question}}" bindinput="onQuestion"/>
+  <button class="btn-primary" style="margin:16rpx 0 0;" loading="{{loading}}" bindtap="ask">提问</button>
+</view>

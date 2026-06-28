@@ -1,0 +1,19 @@
+<view class="card" wx:if="{{result}}">
+  <view>您的参考位次：<text style="font-weight:600;color:#1a56db;">{{result.student_rank}}</text></view>
+  <view style="margin-top:8rpx;color:#6b7280;">共 {{result.volunteers.length}} 条建议（示例数据）</view>
+</view>
+
+<block wx:for="{{result.volunteers}}" wx:key="order">
+  <view class="card item">
+    <view class="row">
+      <text class="order">#{{item.order}}</text>
+      <text class="tier tier-{{item.tier}}">{{item.tier}}</text>
+    </view>
+    <view class="school">{{item.school_name}}</view>
+    <view class="group">{{item.group_name}} · {{item.city}}</view>
+    <view class="meta">计划 {{item.plan_count}} 人 · 参考最低位次 {{item.ref_min_rank || '暂无'}}</view>
+    <button size="mini" data-index="{{index}}" bindtap="goChat">追问这条</button>
+  </view>
+</block>
+
+<view class="disclaimer">{{result.disclaimer}}</view>

@@ -1,0 +1,635 @@
+{
+  "errcode": 0,
+  "errmsg": "ok",
+  "data": {
+    "topic": {
+      "uid": "1106",
+      "title": "聚焦2026高考",
+      "headimg": "https://p1-mp.oeeee.com/202606/06/800x400_6a241a7df406f.png",
+      "titleimg": "https://p1-mp.oeeee.com/202606/06/800x400_6a241a7df406f.png",
+      "summary": "南都校探通过文字+直播+短视频等方式，持续跟进2026高考的最新资讯，关注高考动态，提供深度解析。",
+      "interactimg": "",
+      "interact_num": "0",
+      "is_showpv": "1",
+      "is_limitapp": "0",
+      "first_page_rows": "2",
+      "totlePV": "218万",
+      "shareicon": "https://p1-mp.oeeee.com/static/logo/ndapp_logo_default.png"
+    },
+    "taglist": [
+      {
+        "id": "17586",
+        "name": "现场直击"
+      },
+      {
+        "id": "17587",
+        "name": "精彩视频"
+      },
+      {
+        "id": "17588",
+        "name": "高考录取"
+      },
+      {
+        "id": "17589",
+        "name": "试卷分析"
+      },
+      {
+        "id": "17590",
+        "name": "考前动态"
+      },
+      {
+        "id": "17599",
+        "name": "特别策划"
+      }
+    ],
+    "specialid": 4872,
+    "newslist": [
+      {
+        "tag": "现场直击",
+        "tagid": "17586",
+        "is_next": 1,
+        "list": [
+          {
+            "docid": "BAAFRD0000202606091605134",
+            "title": "考完送你上热搜、985红包雨有钱花，接考礼物抽象又有爱",
+            "titleimg": "https://p1-mp.oeeee.com/202606/09/750x500_6a279a15de80a.png",
+            "uid": "1106",
+            "author": "南都教育 ",
+            "ptime": "1781001866",
+            "indicator": "06-09",
+            "status": "2",
+            "flag": "doc",
+            "flagid": "0",
+            "imglist": [
+              "https://p1-mp.oeeee.com/202606/09/750x500_6a279a15de80a.png"
+            ],
+            "url": "https://m.mp.oeeee.com/a/BAAFRD0000202606091605134.html",
+            "headimgurl": "https://img1.ndapp.oeeee.com/author/200x200_5cad84130d03b.jpg",
+            "ext_link_jsonpack": "{\"id\":\"BAAFRD0000202606091605134\",\"type\":\"doc\",\"sign\":\"274c65ffd0693d038c005bd9a41eb172\"}"
+          },
+          {
+            "docid": "BAAFRD0000202606081604725",
+            "title": "高考英语结束，李华未出现在广东 ，考生：作文有新意",
+            "titleimg": "https://p1-mp.oeeee.com/202606/08/750x500_6a268eaec2483.png",
+            "uid": "1106",
+            "author": "南都教育 ",
+            "ptime": "1780913361",
+            "indicator": "06-08",
+            "status": "2",
+            "flag": "doc",
+            "flagid": "0",
+            "imglist": [
+              "https://p1-mp.oeeee.com/202606/08/750x500_6a268eaec2483.png"
+            ],
+            "url": "https://m.mp.oeeee.com/a/BAAFRD0000202606081604725.html",
+            "headimgurl": "https://img1.ndapp.oeeee.com/author/200x200_5cad84130d03b.jpg",
+            "ext_link_jsonpack": "{\"id\":\"BAAFRD0000202606081604725\",\"type\":\"doc\",\"sign\":\"6f98b594f0d56bca47fa11bf2d768f53\"}"
+          },
+          {
+            "docid": "BAAFRD0000202606081604430",
+            "title": "考生谈高考物理和历史：计算量大，选择题难",
+            "titleimg": "https://p1-mp.oeeee.com/202606/08/750x500_6a262e3a51912.png",
+            "uid": "1106",
+            "author": "南都教育 ",
+            "ptime": "1780890236",
+            "indicator": "06-08",
+            "status": "2",
+            "flag": "doc",
+            "flagid": "0",
+            "imglist": [
+              "https://p1-mp.oeeee.com/202606/08/750x500_6a262e3a51912.png"
+            ],
+            "url": "https://m.mp.oeeee.com/a/BAAFRD0000202606081604430.html",
+            "headimgurl": "https://img1.ndapp.oeeee.com/author/200x200_5cad84130d03b.jpg",
+            "ext_link_jsonpack": "{\"id\":\"BAAFRD0000202606081604430\",\"type\":\"doc\",\"sign\":\"c995013cd912619319df42121bbc4761\"}"
+          },
+          {
+            "docid": "BAAFRD0000202606071604158",
+            "title": "高考数学结束  考生：题型新颖，有点出乎意料",
+            "titleimg": "https://p1-mp.oeeee.com/202606/07/750x500_6a253c659022d.png",
+            "uid": "1106",
+            "author": "南都教育 ",
+            "ptime": "1780827782",
+            "indicator": "06-07",
+            "status": "2",
+            "flag": "doc",
+            "flagid": "0",
+            "imglist": [
+              "https://p1-mp.oeeee.com/202606/07/750x500_6a253c659022d.png"
+            ],
+            "url": "https://m.mp.oeeee.com/a/BAAFRD0000202606071604158.html",
+            "headimgurl": "https://img1.ndapp.oeeee.com/author/200x200_5cad84130d03b.jpg",
+            "ext_link_jsonpack": "{\"id\":\"BAAFRD0000202606071604158\",\"type\":\"doc\",\"sign\":\"fbbc13f515a0ef9020808f619762ec7c\"}"
+          },
+          {
+            "docid": "BAAFRD0000202606071604052",
+            "title": "考场外的松弛：一位妈妈经历的两次“陪考”",
+            "titleimg": "https://p1-mp.oeeee.com/202606/07/750x500_6a2505dd27047.png",
+            "uid": "1106",
+            "author": "南都教育 ",
+            "ptime": "1780816892",
+            "indicator": "06-07",
+            "status": "2",
+            "flag": "doc",
+            "flagid": "0",
+            "imglist": [
+              "https://p1-mp.oeeee.com/202606/07/750x500_6a2505dd27047.png"
+            ],
+            "url": "https://m.mp.oeeee.com/a/BAAFRD0000202606071604052.html",
+            "headimgurl": "https://img1.ndapp.oeeee.com/author/200x200_5cad84130d03b.jpg",
+            "ext_link_jsonpack": "{\"id\":\"BAAFRD0000202606071604052\",\"type\":\"doc\",\"sign\":\"c8103fedec87625f98ba4a4d131d667a\"}"
+          }
+        ]
+      },
+      {
+        "tag": "精彩视频",
+        "tagid": "17587",
+        "is_next": 1,
+        "list": [
+          {
+            "docid": "BAAFRD0000202606231613787",
+            "title": "广东高考放榜在即 招生章程暗藏玄机 广东考生务必留意",
+            "titleimg": "https://api-ndapp-cache.oeeee.com/nd/202606/23/5bfe78f548f54db9a30f6d6c44ef6c96.jpg",
+            "uid": "1106",
+            "author": "南都教育 ",
+            "ptime": "1782202467",
+            "indicator": "16:14",
+            "status": "2",
+            "flag": "video",
+            "flagid": "616853",
+            "imglist": [
+              "https://api-ndapp-cache.oeeee.com/nd/202606/23/5bfe78f548f54db9a30f6d6c44ef6c96.jpg"
+            ],
+            "url": "https://m.mp.oeeee.com/a/BAAFRD0000202606231613787.html",
+            "video": "https://vod2.oeeee.com/60f2e6f96ec971f180b35017f0f80102/8ed727b2eba56261ab9b9ae2000e1a9b-hd-nbv1.mp4",
+            "video_duration": "01:33",
+            "headimgurl": "https://img1.ndapp.oeeee.com/author/200x200_5cad84130d03b.jpg",
+            "ext_link_jsonpack": "{\"id\":\"BAAFRD0000202606231613787\",\"type\":\"doc\",\"sign\":\"427e9587d74be307fe4fde70c05715dd\"}"
+          },
+          {
+            "docid": "BAAFRD0000202606231613837",
+            "title": "首年招生280人 ，这所学校给新生带来哪些红利？",
+            "titleimg": "https://api-ndapp-cache.oeeee.com/nd/202606/23/ffc27a822e884c3b985628250dbe5e5d.jpg",
+            "uid": "1106",
+            "author": "南都教育 ",
+            "ptime": "1782201611",
+            "indicator": "16:00",
+            "status": "2",
+            "flag": "video",
+            "flagid": "616892",
+            "imglist": [
+              "https://api-ndapp-cache.oeeee.com/nd/202606/23/ffc27a822e884c3b985628250dbe5e5d.jpg"
+            ],
+            "url": "https://m.mp.oeeee.com/a/BAAFRD0000202606231613837.html",
+            "video": "https://vod2.oeeee.com/f0dc25f76ed171f180b55017f0f80102/b2cdd4cec473cdd2d7297e65f572b61e-hd-nbv1.mp4",
+            "video_duration": "01:50",
+            "headimgurl": "https://img1.ndapp.oeeee.com/author/200x200_5cad84130d03b.jpg",
+            "ext_link_jsonpack": "{\"id\":\"BAAFRD0000202606231613837\",\"type\":\"doc\",\"sign\":\"c413f8bf569372dc869a3c71fd277746\"}"
+          },
+          {
+            "docid": "BAAFRD0000202606231613662",
+            "title": "6.24高考放榜日 11:30起会收到短信 12点可查分",
+            "titleimg": "https://api-ndapp-cache.oeeee.com/nd/202606/23/f5e9855c858b45f394c3426dcada0093.jpg",
+            "uid": "1106",
+            "author": "南都教育 ",
+            "ptime": "1782181097",
+            "indicator": "10:18",
+            "status": "2",
+            "flag": "video",
+            "flagid": "616765",
+            "imglist": [
+              "https://api-ndapp-cache.oeeee.com/nd/202606/23/f5e9855c858b45f394c3426dcada0093.jpg"
+            ],
+            "url": "https://m.mp.oeeee.com/a/BAAFRD0000202606231613662.html",
+            "video": "https://vod2.oeeee.com/d09382d26ea871f1bd0c4531959c0102/4700c24f87735b71b61993a814d4733c-hd-nbv1.mp4",
+            "video_duration": "00:05",
+            "headimgurl": "https://img1.ndapp.oeeee.com/author/200x200_5cad84130d03b.jpg",
+            "ext_link_jsonpack": "{\"id\":\"BAAFRD0000202606231613662\",\"type\":\"doc\",\"sign\":\"f7454ff0431a3d3d04ca0b941a1321db\"}"
+          },
+          {
+            "docid": "BAAFRD0000202606221613266",
+            "title": "首批招生280人，5大专业直连广东重点产业",
+            "titleimg": "https://api-ndapp-cache.oeeee.com/nd/202606/22/f6c978c9d7d747568ac2741f2dfcd5a3.jpg",
+            "uid": "1106",
+            "author": "南都教育 ",
+            "ptime": "1782114081",
+            "indicator": "06-22",
+            "status": "2",
+            "flag": "video",
+            "flagid": "616510",
+            "imglist": [
+              "https://api-ndapp-cache.oeeee.com/nd/202606/22/f6c978c9d7d747568ac2741f2dfcd5a3.jpg"
+            ],
+            "url": "https://m.mp.oeeee.com/a/BAAFRD0000202606221613266.html",
+            "video": "https://vod2.oeeee.com/70d1e4c36e0971f1baac6732b68f0102/8d20a5b417d5cfca2ad65c580dd7cd22-hd-nbv1.mp4",
+            "video_duration": "01:51",
+            "headimgurl": "https://img1.ndapp.oeeee.com/author/200x200_5cad84130d03b.jpg",
+            "ext_link_jsonpack": "{\"id\":\"BAAFRD0000202606221613266\",\"type\":\"doc\",\"sign\":\"04c8be039a1bfcff3415f5976c1cf946\"}"
+          },
+          {
+            "docid": "BAAFRD0000202606211612714",
+            "title": "广东省内高考排名多少可冲暨南大学？学校招办主任给出建议！",
+            "titleimg": "https://api-ndapp-cache.oeeee.com/nd/202606/21/998e4819f04344bc96a7db8e2d37ac86.png",
+            "uid": "1106",
+            "author": "南都教育 ",
+            "ptime": "1782012335",
+            "indicator": "06-21",
+            "status": "2",
+            "flag": "video",
+            "flagid": "616142",
+            "imglist": [
+              "https://api-ndapp-cache.oeeee.com/nd/202606/21/998e4819f04344bc96a7db8e2d37ac86.png"
+            ],
+            "url": "https://m.mp.oeeee.com/a/BAAFRD0000202606211612714.html",
+            "video": "https://vod2.oeeee.com/c0bdd8296d1f71f182415420848c0102/3fb23fa1fe663f6a612687ce74305ba9-hd-nbv1.mp4",
+            "video_duration": "00:23",
+            "headimgurl": "https://img1.ndapp.oeeee.com/author/200x200_5cad84130d03b.jpg",
+            "ext_link_jsonpack": "{\"id\":\"BAAFRD0000202606211612714\",\"type\":\"doc\",\"sign\":\"1ab906254d2fd027f2ca2e40b5425d43\"}"
+          }
+        ]
+      },
+      {
+        "tag": "高考录取",
+        "tagid": "17588",
+        "is_next": 1,
+        "list": [
+          {
+            "docid": "BAAFRD0000202606231613651",
+            "title": "6月24日11:30起，向广东考生绑定手机号推送高考成绩",
+            "titleimg": "https://p1-mp.oeeee.com/202606/23/750x500_6a39e9638ecb5.png",
+            "uid": "1106",
+            "author": "南都教育 ",
+            "ptime": "1782180278",
+            "indicator": "10:04",
+            "status": "2",
+            "flag": "doc",
+            "flagid": "0",
+            "imglist": [
+              "https://p1-mp.oeeee.com/202606/23/750x500_6a39e9638ecb5.png"
+            ],
+            "url": "https://m.mp.oeeee.com/a/BAAFRD0000202606231613651.html",
+            "headimgurl": "https://img1.ndapp.oeeee.com/author/200x200_5cad84130d03b.jpg",
+            "ext_link_jsonpack": "{\"id\":\"BAAFRD0000202606231613651\",\"type\":\"doc\",\"sign\":\"993a8036627e2a2ede4efbc5a86d851b\"}"
+          },
+          {
+            "docid": "BAAFRD0000202606231613623",
+            "title": "放榜！广东定于6月24日举行普通高校招生新闻发布会",
+            "titleimg": "https://p1-mp.oeeee.com/202606/23/750x500_6a39e1c467f3c.png",
+            "uid": "1106",
+            "author": "南都教育 ",
+            "ptime": "1782178424",
+            "indicator": "09:33",
+            "status": "2",
+            "flag": "doc",
+            "flagid": "0",
+            "imglist": [
+              "https://p1-mp.oeeee.com/202606/23/750x500_6a39e1c467f3c.png"
+            ],
+            "url": "https://m.mp.oeeee.com/a/BAAFRD0000202606231613623.html",
+            "headimgurl": "https://img1.ndapp.oeeee.com/author/200x200_5cad84130d03b.jpg",
+            "ext_link_jsonpack": "{\"id\":\"BAAFRD0000202606231613623\",\"type\":\"doc\",\"sign\":\"e3660426a36883b77ef7b9a8cf9f9990\"}"
+          },
+          {
+            "docid": "BAAFRD0000202606221613096",
+            "title": "多所职教本科扩招翻倍起步，最高达3.4倍，新增热门专业",
+            "titleimg": "https://p1-mp.oeeee.com/202606/23/750x500_6a39db7d8c037.png",
+            "uid": "1106",
+            "author": "南都教育 ",
+            "ptime": "1782178121",
+            "indicator": "09:28",
+            "status": "2",
+            "flag": "doc",
+            "flagid": "0",
+            "imglist": [
+              "https://p1-mp.oeeee.com/202606/23/750x500_6a39db7d8c037.png"
+            ],
+            "url": "https://m.mp.oeeee.com/a/BAAFRD0000202606221613096.html",
+            "headimgurl": "https://img1.ndapp.oeeee.com/author/200x200_5cad84130d03b.jpg",
+            "ext_link_jsonpack": "{\"id\":\"BAAFRD0000202606221613096\",\"type\":\"doc\",\"sign\":\"0b9c6572fe49a688efb23dad68c0c378\"}"
+          },
+          {
+            "docid": "BAAFRD0000202606221613090",
+            "title": "深观察｜从轻工到“制造” 今年广东唯一新高职如何长出新枝",
+            "titleimg": "https://p1-mp.oeeee.com/202606/22/750x500_6a3898f3af6d2.png",
+            "uid": "1106",
+            "author": "南都教育 ",
+            "ptime": "1782096666",
+            "indicator": "06-22",
+            "status": "2",
+            "flag": "doc",
+            "flagid": "0",
+            "imglist": [
+              "https://p1-mp.oeeee.com/202606/22/750x500_6a3898f3af6d2.png"
+            ],
+            "url": "https://m.mp.oeeee.com/a/BAAFRD0000202606221613090.html",
+            "headimgurl": "https://img1.ndapp.oeeee.com/author/200x200_5cad84130d03b.jpg",
+            "ext_link_jsonpack": "{\"id\":\"BAAFRD0000202606221613090\",\"type\":\"doc\",\"sign\":\"296c215091dc7dd8510a15e18450dc67\"}"
+          },
+          {
+            "docid": "BAAFRD0000202606211612707",
+            "title": "广医在粤招生1800人 新增口腔医学（一体化）专业",
+            "titleimg": "https://p1-mp.oeeee.com/202606/21/750x500_6a3753fea74ae.png",
+            "uid": "1106",
+            "author": "南都教育 ",
+            "ptime": "1782012855",
+            "indicator": "06-21",
+            "status": "2",
+            "flag": "doc",
+            "flagid": "0",
+            "imglist": [
+              "https://p1-mp.oeeee.com/202606/21/750x500_6a3753fea74ae.png"
+            ],
+            "url": "https://m.mp.oeeee.com/a/BAAFRD0000202606211612707.html",
+            "headimgurl": "https://img1.ndapp.oeeee.com/author/200x200_5cad84130d03b.jpg",
+            "ext_link_jsonpack": "{\"id\":\"BAAFRD0000202606211612707\",\"type\":\"doc\",\"sign\":\"b9c7634246a77bc7da43bc94510d8b0d\"}"
+          }
+        ]
+      },
+      {
+        "tag": "试卷分析",
+        "tagid": "17589",
+        "is_next": 1,
+        "list": [
+          {
+            "docid": "BAAFRD0000202606081604533",
+            "title": "AI迎战高考作文谁更强？名师逐一拆解，豆包更受青睐",
+            "titleimg": "https://p1-mp.oeeee.com/202606/08/750x500_6a2656b56c78a.png",
+            "uid": "1106",
+            "author": "南都教育 ",
+            "ptime": "1780905264",
+            "indicator": "06-08",
+            "status": "2",
+            "flag": "doc",
+            "flagid": "0",
+            "imglist": [
+              "https://p1-mp.oeeee.com/202606/08/750x500_6a2656b56c78a.png"
+            ],
+            "url": "https://m.mp.oeeee.com/a/BAAFRD0000202606081604533.html",
+            "headimgurl": "https://img1.ndapp.oeeee.com/author/200x200_5cad84130d03b.jpg",
+            "ext_link_jsonpack": "{\"id\":\"BAAFRD0000202606081604533\",\"type\":\"doc\",\"sign\":\"ac449f649d55c03ea44132b5043549b7\"}"
+          },
+          {
+            "docid": "BAAFRD0000202606081604470",
+            "title": "《读懂“变化”》——看中学语文正高级教师如何写高考作文",
+            "titleimg": "https://p1-mp.oeeee.com/202606/08/750x500_6a263d4d10acb.png",
+            "uid": "1106",
+            "author": "南都教育 ",
+            "ptime": "1780894301",
+            "indicator": "06-08",
+            "status": "2",
+            "flag": "doc",
+            "flagid": "0",
+            "imglist": [
+              "https://p1-mp.oeeee.com/202606/08/750x500_6a263d4d10acb.png"
+            ],
+            "url": "https://m.mp.oeeee.com/a/BAAFRD0000202606081604470.html",
+            "headimgurl": "https://img1.ndapp.oeeee.com/author/200x200_5cad84130d03b.jpg",
+            "ext_link_jsonpack": "{\"id\":\"BAAFRD0000202606081604470\",\"type\":\"doc\",\"sign\":\"5abe2cd695804ad681e89a72d519866c\"}"
+          },
+          {
+            "docid": "BAAFRD0000202606071604113",
+            "title": "高考作文题出炉！华师老师一小时内完成的下水文，你打几分？",
+            "titleimg": "https://p1-mp.oeeee.com/202606/07/750x500_6a2522c395cf0.png",
+            "uid": "1106",
+            "author": "南都教育 ",
+            "ptime": "1780822015",
+            "indicator": "06-07",
+            "status": "2",
+            "flag": "doc",
+            "flagid": "0",
+            "imglist": [
+              "https://p1-mp.oeeee.com/202606/07/750x500_6a2522c395cf0.png"
+            ],
+            "url": "https://m.mp.oeeee.com/a/BAAFRD0000202606071604113.html",
+            "headimgurl": "https://img1.ndapp.oeeee.com/author/200x200_5cad84130d03b.jpg",
+            "ext_link_jsonpack": "{\"id\":\"BAAFRD0000202606071604113\",\"type\":\"doc\",\"sign\":\"fb34b5a771a879ae53682fc3aa3f0169\"}"
+          },
+          {
+            "docid": "BAAFRD0000202606071604026",
+            "title": "高考作文如何写得出彩？关键在理解转变、认知进化、立意提升",
+            "titleimg": "https://p1-mp.oeeee.com/202606/07/750x500_6a24f45093c23.png",
+            "uid": "1106",
+            "author": "南都教育 ",
+            "ptime": "1780810538",
+            "indicator": "06-07",
+            "status": "2",
+            "flag": "doc",
+            "flagid": "0",
+            "imglist": [
+              "https://p1-mp.oeeee.com/202606/07/750x500_6a24f45093c23.png"
+            ],
+            "url": "https://m.mp.oeeee.com/a/BAAFRD0000202606071604026.html",
+            "headimgurl": "https://img1.ndapp.oeeee.com/author/200x200_5cad84130d03b.jpg",
+            "ext_link_jsonpack": "{\"id\":\"BAAFRD0000202606071604026\",\"type\":\"doc\",\"sign\":\"26676b83f768e39c7ffdde7f968081e4\"}"
+          },
+          {
+            "docid": "BAAFRD0000202606071603985",
+            "title": "今年广东高考语文作文怎么写？命题思路揭晓",
+            "titleimg": "https://p1-mp.oeeee.com/202606/07/750x500_6a24e8adbdf69.png",
+            "uid": "1106",
+            "author": "南都教育 ",
+            "ptime": "1780804470",
+            "indicator": "06-07",
+            "status": "2",
+            "flag": "doc",
+            "flagid": "0",
+            "imglist": [
+              "https://p1-mp.oeeee.com/202606/07/750x500_6a24e8adbdf69.png"
+            ],
+            "url": "https://m.mp.oeeee.com/a/BAAFRD0000202606071603985.html",
+            "headimgurl": "https://img1.ndapp.oeeee.com/author/200x200_5cad84130d03b.jpg",
+            "ext_link_jsonpack": "{\"id\":\"BAAFRD0000202606071603985\",\"type\":\"doc\",\"sign\":\"11e4cd469942766d20d6f9a551d42ff4\"}"
+          }
+        ]
+      },
+      {
+        "tag": "考前动态",
+        "tagid": "17590",
+        "is_next": 1,
+        "list": [
+          {
+            "docid": "BAAFRD0000202606041602542",
+            "title": "广东“暖心高考”在行动 多部门联动护航高考",
+            "titleimg": "https://p1-mp.oeeee.com/202606/04/750x500_6a211519e67b7.png",
+            "uid": "1106",
+            "author": "南都教育 ",
+            "ptime": "1780556855",
+            "indicator": "06-04",
+            "status": "2",
+            "flag": "doc",
+            "flagid": "0",
+            "imglist": [
+              "https://p1-mp.oeeee.com/202606/04/750x500_6a211519e67b7.png"
+            ],
+            "url": "https://m.mp.oeeee.com/a/BAAFRD0000202606041602542.html",
+            "headimgurl": "https://img1.ndapp.oeeee.com/author/200x200_5cad84130d03b.jpg",
+            "ext_link_jsonpack": "{\"id\":\"BAAFRD0000202606041602542\",\"type\":\"doc\",\"sign\":\"4116aa513566ea487eb32eb9dddbd744\"}"
+          },
+          {
+            "docid": "BAAFRD0000202606021601681",
+            "title": "广东发布普通高考温馨提醒：明天起可打印高考准考证",
+            "titleimg": "https://api-ndapp-cache.oeeee.com/nd/202606/02/8c4bfcac2cbf4516b936de9423bfd2a8.jpg",
+            "uid": "1106",
+            "author": "南都教育 ",
+            "ptime": "1780397555",
+            "indicator": "06-02",
+            "status": "2",
+            "flag": "video",
+            "flagid": "608758",
+            "imglist": [
+              "https://api-ndapp-cache.oeeee.com/nd/202606/02/8c4bfcac2cbf4516b936de9423bfd2a8.jpg"
+            ],
+            "url": "https://m.mp.oeeee.com/a/BAAFRD0000202606021601681.html",
+            "video": "https://vod2.oeeee.com/b02d43355e6c71f1a3436733a68f0102/323b19889f0a02593d3675c21d5803bd-hd-nbv1.mp4",
+            "video_duration": "00:13",
+            "headimgurl": "https://img1.ndapp.oeeee.com/author/200x200_5cad84130d03b.jpg",
+            "ext_link_jsonpack": "{\"id\":\"BAAFRD0000202606021601681\",\"type\":\"doc\",\"sign\":\"bc794d7a2d3e3eece1e7b5d5e6ff9fd6\"}"
+          },
+          {
+            "docid": "BAAFRD0000202606021601556",
+            "title": "广东高考温馨提醒：明日起可打印、查询和下载准考证",
+            "titleimg": "https://p1-mp.oeeee.com/202606/02/750x500_6a1e95693a6c7.png",
+            "uid": "1106",
+            "author": "南都教育 ",
+            "ptime": "1780390906",
+            "indicator": "06-02",
+            "status": "2",
+            "flag": "doc",
+            "flagid": "0",
+            "imglist": [
+              "https://p1-mp.oeeee.com/202606/02/750x500_6a1e95693a6c7.png"
+            ],
+            "url": "https://m.mp.oeeee.com/a/BAAFRD0000202606021601556.html",
+            "headimgurl": "https://img1.ndapp.oeeee.com/author/200x200_5cad84130d03b.jpg",
+            "ext_link_jsonpack": "{\"id\":\"BAAFRD0000202606021601556\",\"type\":\"doc\",\"sign\":\"2170f40139ebf983582cbab6c3a21397\"}"
+          },
+          {
+            "docid": "BAAFRD0000202605291599342",
+            "title": "广东省公布普通高考举报电话 开通时间为6月1日至10日",
+            "titleimg": "https://p1-mp.oeeee.com/202605/29/750x500_6a193829723c0.png",
+            "uid": "1106",
+            "author": "南都教育 ",
+            "ptime": "1780039090",
+            "indicator": "05-29",
+            "status": "2",
+            "flag": "doc",
+            "flagid": "0",
+            "imglist": [
+              "https://p1-mp.oeeee.com/202605/29/750x500_6a193829723c0.png"
+            ],
+            "url": "https://m.mp.oeeee.com/a/BAAFRD0000202605291599342.html",
+            "headimgurl": "https://img1.ndapp.oeeee.com/author/200x200_5cad84130d03b.jpg",
+            "ext_link_jsonpack": "{\"id\":\"BAAFRD0000202605291599342\",\"type\":\"doc\",\"sign\":\"6936fa4d1fd597beb9f838629c2cf8f7\"}"
+          },
+          {
+            "docid": "BAAFRD0000202605131589289",
+            "title": "广东省2026年夏季高考将于6月7日-6月9日举行",
+            "titleimg": "https://api-ndapp-cache.oeeee.com/nd/202605/13/984e79253ad84a21ae294358434f8609.png",
+            "uid": "1106",
+            "author": "南都教育 ",
+            "ptime": "1778663761",
+            "indicator": "05-13",
+            "status": "2",
+            "flag": "video",
+            "flagid": "600991",
+            "imglist": [
+              "https://api-ndapp-cache.oeeee.com/nd/202605/13/984e79253ad84a21ae294358434f8609.png"
+            ],
+            "url": "https://m.mp.oeeee.com/a/BAAFRD0000202605131589289.html",
+            "video": "https://vod2.oeeee.com/8004e21b4eaa71f1b9456633b79f0102/8d8ce5bf4cbc3ec79c7c018f72970608-hd-nbv1.mp4",
+            "video_duration": "00:16",
+            "headimgurl": "https://img1.ndapp.oeeee.com/author/200x200_5cad84130d03b.jpg",
+            "ext_link_jsonpack": "{\"id\":\"BAAFRD0000202605131589289\",\"type\":\"doc\",\"sign\":\"42cd1349ef9c6195b8f48184766397de\"}"
+          }
+        ]
+      },
+      {
+        "tag": "特别策划",
+        "tagid": "17599",
+        "is_next": 0,
+        "list": [
+          {
+            "docid": "BAAFRD0000202606071604175",
+            "title": "脑洞大开！小学生挑战高考作文",
+            "titleimg": "https://api-ndapp-cache.oeeee.com/nd/202606/07/17d157406eaa4654a765f85b56d32d47.jpg",
+            "uid": "1106",
+            "author": "南都教育 ",
+            "ptime": "1780829274",
+            "indicator": "06-07",
+            "status": "2",
+            "flag": "video",
+            "flagid": "610534",
+            "imglist": [
+              "https://api-ndapp-cache.oeeee.com/nd/202606/07/17d157406eaa4654a765f85b56d32d47.jpg"
+            ],
+            "url": "https://m.mp.oeeee.com/a/BAAFRD0000202606071604175.html",
+            "video": "https://vod2.oeeee.com/d09babd7625b71f1813d6632b68f0102/4a9d2b10c0c7a441273822d37f6fbcc5-hd-nbv1.mp4",
+            "video_duration": "01:36",
+            "headimgurl": "https://img1.ndapp.oeeee.com/author/200x200_5cad84130d03b.jpg",
+            "ext_link_jsonpack": "{\"id\":\"BAAFRD0000202606071604175\",\"type\":\"doc\",\"sign\":\"374b89ac4aee23dc69ab41bc2c97e284\"}"
+          },
+          {
+            "docid": "BAAFRD0000202606061603838",
+            "title": "文殊护念  一举夺魁 高考加油",
+            "titleimg": "https://api-ndapp-cache.oeeee.com/nd/202606/06/e9713c57278f40b5b13a10178e727242.jpg",
+            "uid": "1106",
+            "author": "南都教育 ",
+            "ptime": "1780763400",
+            "indicator": "06-07",
+            "status": "2",
+            "flag": "video",
+            "flagid": "610258",
+            "imglist": [
+              "https://api-ndapp-cache.oeeee.com/nd/202606/06/e9713c57278f40b5b13a10178e727242.jpg"
+            ],
+            "url": "https://m.mp.oeeee.com/a/BAAFRD0000202606061603838.html",
+            "video": "https://vod2.oeeee.com/b05fa43961b371f181506723a78f0102/20663ad6843fda61772f40599219e73a-hd-nbv1.mp4",
+            "video_duration": "00:06",
+            "headimgurl": "https://img1.ndapp.oeeee.com/author/200x200_5cad84130d03b.jpg",
+            "ext_link_jsonpack": "{\"id\":\"BAAFRD0000202606061603838\",\"type\":\"doc\",\"sign\":\"62c1b486b7fb1e93f0df29fe06b172ad\"}"
+          },
+          {
+            "docid": "BAAFRD0000202606051603314",
+            "title": "小鹏陪你去高考，放心！麻烦交给他",
+            "titleimg": "https://api-ndapp-cache.oeeee.com/nd/202606/05/81b15f5bf4b445909d2b1d2fa5b36b08.jpg",
+            "uid": "1106",
+            "author": "南都教育 ",
+            "ptime": "1780707000",
+            "indicator": "06-06",
+            "status": "2",
+            "flag": "video",
+            "flagid": "609883",
+            "imglist": [
+              "https://api-ndapp-cache.oeeee.com/nd/202606/05/81b15f5bf4b445909d2b1d2fa5b36b08.jpg"
+            ],
+            "url": "https://m.mp.oeeee.com/a/BAAFRD0000202606051603314.html",
+            "video": "https://vod2.oeeee.com/e0b6c51060c671f180a54531858c0102/a1cdd4ae5ce58c16e1a7dac424785ae8-hd-nbv1.mp4",
+            "video_duration": "00:51",
+            "headimgurl": "https://img1.ndapp.oeeee.com/author/200x200_5cad84130d03b.jpg",
+            "ext_link_jsonpack": "{\"id\":\"BAAFRD0000202606051603314\",\"type\":\"doc\",\"sign\":\"33cd90ae4a2d84f7fd5deca086ce9c86\"}"
+          },
+          {
+            "docid": "BAAFRD0000202606041602603",
+            "title": "“潮”向未来，高考必胜",
+            "titleimg": "https://api-ndapp-cache.oeeee.com/nd/202606/04/92ad9c36f1124ee389ebecfc459e1b8a.jpg",
+            "uid": "1106",
+            "author": "南都教育 ",
+            "ptime": "1780624910",
+            "indicator": "06-05",
+            "status": "2",
+            "flag": "video",
+            "flagid": "609405",
+            "imglist": [
+              "https://api-ndapp-cache.oeeee.com/nd/202606/04/92ad9c36f1124ee389ebecfc459e1b8a.jpg"
+            ],
+            "url": "https://m.mp.oeeee.com/a/BAAFRD0000202606041602603.html",
+            "video": "https://vod2.oeeee.com/10bb71405fe971f1808b4531858c0102/71eae50403ba3dd4a0f95275ed0dcfe5-hd-nbv1.mp4",
+            "video_duration": "01:59",
+            "headimgurl": "https://img1.ndapp.oeeee.com/author/200x200_5cad84130d03b.jpg",
+            "ext_link_jsonpack": "{\"id\":\"BAAFRD0000202606041602603\",\"type\":\"doc\",\"sign\":\"1e571883b309efebf1e740558ce4a0ae\"}"
+          }
+        ]
+      }
+    ]
+  }
+}

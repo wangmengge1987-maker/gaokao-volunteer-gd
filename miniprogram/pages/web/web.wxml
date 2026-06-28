@@ -1,0 +1,1 @@
+<web-view src="https://wangmengge1987-maker.github.io/gaokao-volunteer-gd/" bindmessage="onMessage"></web-view>

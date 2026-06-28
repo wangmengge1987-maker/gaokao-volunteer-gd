@@ -1,0 +1,180 @@
+URL: https://m.mp.oeeee.com/helper.php
+Data: {'m': 'FriendsSpecial', 'a': 'getinfo', 'id': '4872'}
+Status: 404
+
+<html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>å¯¹ä¸èµ·ä½ è®¿é®çé¡µé¢ä¸å­å¨</title>
+    <style>
+        .contaner{
+            position:relative;
+            height:100%;
+        }
+        .cont-box{
+            width:100%;
+            position:absolute;
+            left:50%;
+            top:5.4rem;
+            transform: translateX(-50%);
+        }
+        .box404{
+            width:16%;
+            margin:auto;
+        }
+        .box404 img{
+            width:100%;
+        }
+        .title404{
+            font-size: 0.3rem;
+            font-family: PingFang SC;
+            font-weight: 400;
+            color: #9B9B9B;
+            line-height: 0.4rem;
+            text-align: center;
+            margin-top:0.47rem
+        }
+        .back-btn{
+            text-align: center;
+            margin-top:0.22rem;
+            font-size: 0.27rem;
+            font-family: PingFang SC;
+            font-weight: 400;
+            color: #9B9B9B;
+            line-height: 0.4rem;
+        }
+        #indexTitle{
+            color: #2F9BFF;
+            cursor: pointer;
+        }
+        @media only screen and (max-width: 750px){
+            .cont-box{
+                width:100%;
+                position:absolute;
+                left:50%;
+                top:16rem;
+                transform: translateX(-50%);
+            }
+            .box404{
+                width:63%;
+            }
+            .box404 img{
+                width:100%;
+            }
+            .title404{
+                font-size: 1.28rem;
+                font-family: PingFang SC;
+                font-weight: 400;
+                color: #9B9B9B;
+                line-height: 1.62rem;
+                text-align: center;
+                margin-top:1.8rem
+            }
+            .back-btn{
+                text-align: center;
+                margin-top:0.83rem;
+                font-size:1.02rem;
+                font-family: PingFang SC;
+                font-weight: 400;
+                line-height: 1.53rem;
+            }
+        }
+    </style>
+</head>
+<script type="text/javascript" src="https://oeimg2.cache.oeeee.com/Public2016/Js/lib/jquery-1.7.2.min.js"></script>
+<script>
+   (function (doc, win) {
+    var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+            var clientWidth = docEl.clientWidth;
+            if (!clientWidth) {
+                return;
+            }
+            docEl.style.fontSize = 10 * (clientWidth / 320) + 'px';
+        };
+    if (!doc.addEventListener) return;
+    win.addEventListener(resizeEvt, recalc, false);
+    doc.addEventListener('DOMContentLoaded', recalc, false);
+})(document, window);
+</script>
+
+<body>
+    <div class="contaner">
+        <div class="cont-box">
+            <div class="box404">
+                <img src="https://oeimg2.cache.oeeee.com/Public_v2/Images/channel/home/404.png" class="404-pic" />
+            </div>
+            <div class="title404">404</div>
+            <div class="back-btn" id="backBtns">
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+     //è·åæ¥æºæ¯å¥¥ä¸ç½è¿æ¯åé½
+    var url=window.location.href //è·åè·³è½¬è¿æ¥çé¾æ¥
+    var urlDomain=getDomain(url)
+    var timeCount=5
+    //è·åurl çåå
+    function getDomain(url){
+        var domain = url.split('/'); //ä»¥â/âè¿è¡åå²
+        if( domain[2] ) {
+            domain = domain[2];
+        } else {
+            domain = ''; //å¦æurlä¸æ­£ç¡®å°±åç©º
+        }
+        return domain
+    }
+    if(urlDomain=='epaper.oeeee.com'){
+        document.body.style.backgroundImage ="url(http://epaper.oeeee.com/epaper/images/home_bg.jpg)"
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundSize = "cover";//è®¾ç½®èæ¯å¾åçå°ºå¯¸
+    }else if(urlDomain=='ipaper.oeeee.com'){
+        document.body.style.backgroundColor ="#ebebeb"
+    }else if(urlDomain=='m.mp.oeeee.com'){
+        document.body.style.backgroundColor ="#ebebeb"
+    }
+    if(urlDomain!=='m.mp.oeeee.com'){
+        var nodeSelected=document.getElementById("backBtns")
+        var timeImmer='<span id="time">5</span>ç§åè¿å<span id="index-title">é¦é¡µ</span>'
+        nodeSelected.innerHTML=timeImmer
+        var timer=setInterval(function(){
+        if(timeCount>0){
+            timeCount--
+            var times='<span id="time">'+timeCount+'</span>ç§åè¿å<span id="indexTitle">é¦é¡µ</span>'
+            nodeSelected.innerHTML=times
+            var btn=document.getElementById('indexTitle')
+            if(btn){
+                btn.addEventListener('click',function(){
+                    skitToUrl()
+                })
+            }
+        }else{
+            clearInterval(timer);
+            skitToUrl()
+        }
+        },1000)
+            //ç¹å»é¦é¡µè¿åé¦é¡µ
+             
+    }
+    function skitToUrl(){
+        if(urlDomain=='www.oeeee.com'){
+            window.location.href='https://www.oeeee.com/'
+        }else if(urlDomain=='sz.oeeee.com'){
+            window.location.href='https://sz.oeeee.com/'
+        }else if(urlDomain=='epaper.oeeee.com'){
+            window.location.href='https://epaper.oeeee.com/'
+        }else if(urlDomain=='ipaper.oeeee.com'){
+            window.location.href='https://ipaper.oeeee.com/'
+        }else if(urlDomain=='3g.oeeee.com'){
+            window.location.href='https://3g.oeeee.com/'
+        }else if(urlDomain=='m.oeeee.com'){
+            window.location.href='https://m.oeeee.com/'
+        }
+    }
+</script>
+</html>

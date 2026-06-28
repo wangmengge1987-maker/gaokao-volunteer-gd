@@ -1,0 +1,7 @@
+{
+  "name": "recommend",
+  "version": "1.0.0",
+  "description": "调用后端推荐API",
+  "main": "index.js",
+  "dependencies": {}
+}

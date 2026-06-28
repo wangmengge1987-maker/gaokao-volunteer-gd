@@ -1,0 +1,17 @@
+﻿python : Traceback (most recent call last):
+所在位置 C:\Users\wangm\AppData\Local\Temp\ps-script-dc246bae-8eaf-43a1-95d5-103032b2864c.ps1:110 字符: 1
++ python -c "
++ ~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "<string>", line 18, in <module>
+UnicodeEncodeError: 'gbk' codec can't encode character '\xa5' in position 0: illegal multibyte sequence
+==== 0c3cd30dc8474f3b8b9103fcc52f465d.pdf len 367
+  电子发票（普通发票）
+  发票号码：26447000000663915326
+  开票日期：2026年03月23日
+  名称：广州博纳教育科技有限公司
+  名称：中国石化销售股份有限公司广东广州石油分公司
+  项目名称
+  
